@@ -1,12 +1,27 @@
+/*const person: {
+  name: string;
+  age: number;
+} = */
+
 const person: {
   name: string;
   age: number;
+  hobbies: string[];
 } = {
   name: 'Maximilian',
   age: 30,
+  hobbies: ['Sports', 'Cooking']
 };
 
+let favoriteActivities: string[];
+favoriteActivities = ['Sports', 'Player'];
+
 console.log(person.name);
+
+for (const hobby of person.hobbies) {
+  console.log(hobby.toUpperCase())
+  // console.log(hobby.map()) // !!! ERROR !!!
+}
 
 const product: {
   id: string;
