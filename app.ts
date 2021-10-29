@@ -1,59 +1,16 @@
-// const person: {
-//   name: string;
-//   age: number;
-//   hobbies: string[];
-//   role: [number, string];
-// } = {
-//   name: 'Maximilian',
-//   age: 30,
-//   hobbies: ['Sports', 'Cooking'],
-//   role: [2, 'author']
-// };
-
-enum Role { ADMIN, READ_ONLY, AUTHOR}
-const person = {
-  name: 'Maximilian',
-  age: 30,
-  hobbies: ['Sports', 'Cooking'],
-  role: Role.ADMIN
-};
-
-// person.role.push('admin'); // This is gonna work! Unfortunately, .push does not catch the error
-// person.role[1] = 10; // it can't assign number value to string type definition
-// person.role = [0, 'admin', 'user'] // error due to: more elements
-
-console.log(person);
-
-let favoriteActivities: string[];
-favoriteActivities = ['Sports', 'Player'];
-
-console.log(person.name);
-
-for (const hobby of person.hobbies) {
-  console.log(hobby.toUpperCase())
-  // console.log(hobby.map()) // !!! ERROR !!!
-}
-
-if (person.role === Role.AUTHOR) {
-  console.log('is author');
-}
-
-const product: {
-  id: string;
-  price: number;
-  tags: string[];
-  details: {
-    title: string;
-    description: string;
+function combine(input1: number | string, input2: number | string) {
+  let result;
+  if (typeof input1 === 'number' && typeof input2 === 'number') {
+    result = input1 + input2;
+  } else {
+    result = input1.toString() + input2.toString();
   }
-} = {
-  id: 'abc1',
-  price: 12.99,
-  tags: ['great-offer', 'hot-and-new'],
-  details: {
-    title: 'Red Carpet',
-    description: 'A great carpet - almost brand-new!'
-  }
+  return result;
 }
 
-console.log (product);
+const combinedAges = combine(30, 26);
+console.log(combinedAges);
+
+const combinedNames = combine('Max', 'Ana');
+console.log(combinedNames);
+
